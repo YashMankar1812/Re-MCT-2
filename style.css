@@ -1,169 +1,135 @@
-/* * {
+/* General Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
-
 body {
-    position: relative;
-    background-color: #333;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
     color: #333;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-}
-
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(53, 27, 27, 0.5); 
-    z-index: -1;
-}
-
-
-header {
-    text-align: center;
-    margin: 20px 0;
-    letter-spacing: 2px;
-}
-
-header h1 {
-    font-size: 3.5rem;
-    color: rgb(22, 144, 28);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-main {
-    background-color: transparent   ;
-    border-radius: 10px;
+    line-height: 1.6;
     padding: 20px;
-    width: 100%;
+}
+header {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Sections Styling */
+main {
     max-width: 1200px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
-
 section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 h2 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #af4261;
+    margin-bottom: 15px;
 }
 
-.dropdown-section {
+/* Dropdown Section */
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+select {
+    padding: 10px;
+    border: 2px solid #4a90e2;
+    border-radius: 4px;
+    background-color: #f0f4ff;
+    font-size: 1rem;
+    width: 60%;
+    cursor: pointer;
+}
+.primary-button {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.primary-button:hover {
+    background-color: #357abd;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+#stockSearch {
+    padding: 10px;
+    width: 70%;
+    border: 2px solid #4a90e2;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Stock Information Section */
+.stock-info {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #af4261;
-    outline: none;
-    width: 50%;
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b); 
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background: linear-gradient(135deg, #feb47b, #ff7e5f); 
-    transform: translateY(-5px); 
-}
-
-input[type="text"] {
-    padding: 10px;
+.card {
+    background-color: #f0f4ff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
     width: 100%;
-    max-width: 300px;
-    border-radius: 5px;
-    border: 2px solid #af4261;
-    outline: none;
-    margin-right: 10px;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.stock-info {
-    background-color: #fafafa;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Graph Section */
+.chart-container {
+    position: relative;
+    height: 400px;
 }
 
-#stockDetails p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.graph-section canvas {
-    max-width: 100%;
-    background-color: #fafafa;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* Stock Table Section */
 .stock-table table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
-
 .stock-table th, .stock-table td {
-    padding: 10px;
+    padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-
 .stock-table th {
-    background-color: #af4261;
+    background-color: #4a90e2;
     color: white;
-    font-weight: bold;
+    font-weight: 500;
+}
+.stock-table tbody tr:hover {
+    background-color: #f0f4ff;
 }
 
-.stock-table tr:hover {
-    background-color: #f9f9f9;
-    transition: background 0.2s ease;
-}
 
-@media (max-width: 768px) {
-    main {
-        padding: 15px;
-        width: 100%;
-    }
-
-    select, input[type="text"] {
-        width: 100%;
-        max-width: none;
-    }
-
-    button {
-        width: 100%;
-        margin-top: 10px;
-    }
-} */
+/* 
 
 
-* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -270,4 +236,4 @@ button {
     .search-section {
         flex-direction: column;
     }
-}
+} */
